@@ -1,9 +1,6 @@
 package com.example.springmessagingapp.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/hello")
@@ -18,6 +15,9 @@ public class MessagingRestController {
         return  "Hello " + name +" , Welcome to BridgeLabz!";
     }
 
-
+    @GetMapping("/{name}")
+    public String hello3(@PathVariable String name){
+        return  "Hello " + name +" , Welcome to BridgeLabz!";
+    }
 
 }
