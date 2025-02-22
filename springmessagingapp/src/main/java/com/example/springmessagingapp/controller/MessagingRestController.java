@@ -1,5 +1,4 @@
 package com.example.springmessagingapp.controller;
-
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -10,7 +9,7 @@ public class MessagingRestController {
         return "Hello From BridgeLabz";
     }
 
-    @GetMapping("/")
+    @GetMapping("/web")
     public String hello2(@RequestParam String name){
         return  "Hello " + name +" , Welcome to BridgeLabz!";
     }
@@ -18,6 +17,12 @@ public class MessagingRestController {
     @GetMapping("/{name}")
     public String hello3(@PathVariable String name){
         return  "Hello " + name +" , Welcome to BridgeLabz!";
+    }
+
+    @PostMapping("/post")
+    public String hello4(@RequestBody UserDTO user){
+
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz!";
     }
 
 }
